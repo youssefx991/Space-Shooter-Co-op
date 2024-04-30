@@ -45,9 +45,9 @@ func _on_enemy_say_entered_land(location):
 func _on_enemy_spawn_timer_timeout():
 	var enemy_to_spawn = enemy_scenes.pick_random().instantiate()
 	enemy_to_spawn.say_entered_land.connect(_on_enemy_say_entered_land)
-	var random_x = randf_range(0, 1920)
-	while (random_x == 960):
-		random_x = randf_range(0, 1920)
-	enemy_to_spawn.global_position = Vector2(randf_range(0, 1920), 50)
+	var random_x = randf_range(0, 1152)
+	while (random_x == 576):
+		random_x = randf_range(0, 1152)
+	enemy_to_spawn.global_position = Vector2(random_x, 50)
 	add_child(enemy_to_spawn)
 	

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0ntwi1y2ncqu"]
+[gd_scene load_steps=6 format=3 uid="uid://c0ntwi1y2ncqu"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_dpxya"]
 [ext_resource type="PackedScene" uid="uid://dvqmh3bw2hahw" path="res://Player1/player1.tscn" id="2_uxi6s"]
 [ext_resource type="PackedScene" uid="uid://cll21i7067aix" path="res://Enemy/enemy.tscn" id="3_nwgq0"]
 [ext_resource type="PackedScene" uid="uid://ddv7ggnmeib88" path="res://DriverEnemy/driver_enemy.tscn" id="4_1us25"]
+[ext_resource type="PackedScene" uid="uid://bhpcsjdare71o" path="res://Player2/player_2.tscn" id="5_lxeox"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_dpxya")
@@ -28,8 +29,7 @@ position = Vector2(75, 567)
 [node name="split_screen_position" type="Marker2D" parent="."]
 position = Vector2(526, 631)
 
-[node name="Player2" parent="." instance=ExtResource("2_uxi6s")]
-position = Vector2(1020, 517)
-player_number = 2
+[node name="Player2" parent="." instance=ExtResource("5_lxeox")]
+position = Vector2(895, 537)
 
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
