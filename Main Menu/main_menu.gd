@@ -18,3 +18,7 @@ func _on_multi_pressed():
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
+func _on_single_pressed():
+	get_tree().change_scene_to_file("res://single player world/single_player_world.tscn")

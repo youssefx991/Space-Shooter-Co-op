@@ -51,5 +51,6 @@ offset_right = 582.0
 offset_bottom = 377.0
 text = "Quit"
 
+[connection signal="pressed" from="single" to="." method="_on_single_pressed"]
 [connection signal="pressed" from="multi" to="." method="_on_multi_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
