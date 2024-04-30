@@ -24,3 +24,8 @@ func _on_player1_laser_shot(laser_scene, location):
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	add_child(laser)
+
+
+func _on_enemy_say_entered_land(location):
+	if location.x < $split_screen_position.global_position.x:
+		player1.damage()
