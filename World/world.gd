@@ -28,4 +28,5 @@ func _on_player1_laser_shot(laser_scene, location):
 
 func _on_enemy_say_entered_land(location):
 	if location.x < $split_screen_position.global_position.x:
-		player1.damage()
+		if player1 != null:
+			player1.damage()
