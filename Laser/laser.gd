@@ -22,4 +22,5 @@ func _on_area_entered(area):
 	if area is enemy:
 		area.damage()
 		queue_free()
-		enemy_dead.emit(player_number)
+		if area.is_dead:
+			enemy_dead.emit(player_number)

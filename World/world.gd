@@ -9,7 +9,7 @@ var player2_score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	
+	Scores.is_single_game = false
 	assert(player1 != null)
 	assert(player2 != null)
 	
@@ -64,5 +64,7 @@ func _on_player_dead(number):
 func _on_enemy_dead(number):
 	if number == 1:
 		player1_score += 1
+		Scores.player1_score = player1_score
 	else:
 		player2_score += 1
+		Scores.player2_score = player2_score

@@ -24,7 +24,7 @@ autostart = true
 position = Vector2(272, 521)
 
 [node name="player1_spawn_position" type="Marker2D" parent="."]
-position = Vector2(75, 567)
+position = Vector2(68, 557)
 
 [node name="split_screen_position" type="Marker2D" parent="."]
 position = Vector2(526, 631)

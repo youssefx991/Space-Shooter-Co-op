@@ -3,6 +3,8 @@ class_name enemy extends Area2D
 signal say_entered_land(location)
 @export var SPEED = 100
 @export var health = 100
+
+var is_dead = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	health_label.text = str(health)
@@ -23,6 +25,7 @@ func damage():
 		health_label.text = str(health)
 		
 func die():
+	is_dead = true
 	queue_free()
 
 
