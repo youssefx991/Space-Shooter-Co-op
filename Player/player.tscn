@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvqmh3bw2hahw"]
+
+[ext_resource type="Texture2D" uid="uid://dlqkyjlehk5kv" path="res://Space Shooter Assets/PNG/playerShip3_blue.png" id="1_3iksg"]
+
+[node name="Player" type="CharacterBody2D"]
+texture_filter = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_3iksg")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, 27, -49, 28, -49, 22, -11, -23, -4, -37, 4, -37, 10, -24, 49, 22, 49, 28, 22, 28, 13, 37, -14, 37)

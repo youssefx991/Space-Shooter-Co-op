@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dirtildptcl3h"
+path="res://.godot/imported/sfx_twoTone.ogg-e4ebe4f5e42bc4d43ac8bcce74543312.oggvorbisstr"
+
+[deps]
+
+source_file="res://Space Shooter Assets/Bonus/sfx_twoTone.ogg"
+dest_files=["res://.godot/imported/sfx_twoTone.ogg-e4ebe4f5e42bc4d43ac8bcce74543312.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

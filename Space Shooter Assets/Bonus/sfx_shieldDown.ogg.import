@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3ucopy4m8hpi"
+path="res://.godot/imported/sfx_shieldDown.ogg-517d9840a618cd871134a17c879395cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Space Shooter Assets/Bonus/sfx_shieldDown.ogg"
+dest_files=["res://.godot/imported/sfx_shieldDown.ogg-517d9840a618cd871134a17c879395cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
