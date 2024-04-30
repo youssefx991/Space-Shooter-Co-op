@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvqmh3bw2hahw"]
+[gd_scene load_steps=3 format=3 uid="uid://dvqmh3bw2hahw"]
 
 [ext_resource type="Texture2D" uid="uid://dlqkyjlehk5kv" path="res://Space Shooter Assets/PNG/playerShip3_blue.png" id="1_3iksg"]
+[ext_resource type="Script" path="res://Player1/player1.gd" id="1_ai85l"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
+script = ExtResource("1_ai85l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -11,3 +13,6 @@ texture = ExtResource("1_3iksg")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-23, 27, -49, 28, -49, 22, -11, -23, -4, -37, 4, -37, 10, -24, 49, 22, 49, 28, 22, 28, 13, 37, -14, 37)
+
+[node name="muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -50)

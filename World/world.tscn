@@ -1,10 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0ntwi1y2ncqu"]
 
 [ext_resource type="Script" path="res://World/world.gd" id="1_dpxya"]
-[ext_resource type="PackedScene" uid="uid://dvqmh3bw2hahw" path="res://Player/player.tscn" id="2_nxctr"]
+[ext_resource type="PackedScene" uid="uid://dvqmh3bw2hahw" path="res://Player1/player1.tscn" id="2_uxi6s"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_dpxya")
 
-[node name="Player" parent="." instance=ExtResource("2_nxctr")]
-position = Vector2(555, 413)
+[node name="Player" parent="." instance=ExtResource("2_uxi6s")]
+position = Vector2(745, 368)
+
+[node name="player1_spawn_position" type="Marker2D" parent="."]
+position = Vector2(161, 546)
