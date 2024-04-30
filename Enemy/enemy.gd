@@ -13,7 +13,7 @@ func _ready():
 func _process(delta):
 	global_position.y += SPEED * delta
 	SPEED += 0.1
-	print($VisibleOnScreenNotifier2D.global_position)
+	#print($VisibleOnScreenNotifier2D.global_position)
 	#print(SPEED)
 
 func damage():
@@ -28,6 +28,7 @@ func die():
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	print("lol")
 	say_entered_land.emit(global_position)
 	queue_free()
 
