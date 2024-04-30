@@ -3,9 +3,9 @@ class_name player1 extends CharacterBody2D
 
 signal laser_shot(laser_scene, location)
 
-const SPEED = 300.0
-const ACCELERATION = 5
-var health = 100
+@export var SPEED = 300.0
+@export var ACCELERATION = 5
+@export var health = 100
 var laser_scene = preload("res://Laser/laser.tscn")
 
 @onready var muzzle = $muzzle
@@ -13,7 +13,7 @@ var laser_scene = preload("res://Laser/laser.tscn")
 var direction
 
 var is_shooting = false
-var fire_rate = 0.25
+@export var fire_rate = 0.25
 
 func _ready():
 	health_label.text = str(100)

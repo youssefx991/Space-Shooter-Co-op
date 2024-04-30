@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddv7ggnmeib88"]
+
+[ext_resource type="PackedScene" uid="uid://cll21i7067aix" path="res://Enemy/enemy.tscn" id="1_hb4qm"]
+[ext_resource type="Texture2D" uid="uid://c36yilcrvbw5t" path="res://Space Shooter Assets/PNG/Enemies/enemyBlue5.png" id="2_xibtp"]
+
+[node name="DriverEnemy" instance=ExtResource("1_hb4qm")]
+SPEED = 300
+health = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_xibtp")
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PackedVector2Array(12, 41, 16, 38, 17, 31, 27, 32, 49, -41, 46, -43, 32, -43, 11, -29, 11, -26, 0, -30, -12, -26, -12, -31, -31, -42, -48, -42, -29, 31, -19, 32, -14, 41, -13, 42)
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="2"]
+position = Vector2(1, -70)
+
+[node name="health_label" parent="." index="3"]
+offset_left = -14.0
+offset_top = -56.0
+offset_right = 48.0
+offset_bottom = -33.0

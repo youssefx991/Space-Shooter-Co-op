@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var player1_spawn_position = $player1_spawn_position
-
+@export var enemy_scenes : Array[PackedScene] = []
 
 var player1 = null
 # Called when the node enters the scene tree for the first time.
@@ -27,6 +27,13 @@ func _on_player1_laser_shot(laser_scene, location):
 
 
 func _on_enemy_say_entered_land(location):
+	print("Location.x = {} and split.x = {}",location.x, $split_screen_position.global_position.x )
 	if location.x < $split_screen_position.global_position.x:
-		if player1 != null:
-			player1.damage()
+		player1.damage()
+
+
+func _on_enemy_spawn_timer_timeout():
+	var enemy_to_spawn = enemy_scenes.pick_random().instantiate()
+	enemy_to_spawn.global_position = Vector2(randf_range(0, 1920), 50)
+	add_child(enemy_to_spawn)
+	
