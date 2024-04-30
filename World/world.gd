@@ -1,15 +1,20 @@
 extends Node2D
-
+@onready var player1 = $Player1
+@onready var player2 = $Player2
 @onready var player1_spawn_position = $player1_spawn_position
 @export var enemy_scenes : Array[PackedScene] = []
 
-var player1 = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	player1 = get_tree().get_first_node_in_group('player')
+	
+	
 	assert(player1 != null)
+	assert(player2 != null)
+	
 	player1.global_position = player1_spawn_position.global_position	
 	player1.laser_shot.connect(_on_player1_laser_shot)
+	player2.laser_shot.connect(_on_player1_laser_shot)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,6 +26,7 @@ func _process(delta):
 
 
 func _on_player1_laser_shot(laser_scene, location):
+	print("shooting")
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	add_child(laser)
@@ -29,7 +35,11 @@ func _on_player1_laser_shot(laser_scene, location):
 func _on_enemy_say_entered_land(location):
 	print("Location.x = {} and split.x = {}",location.x, $split_screen_position.global_position.x )
 	if location.x < $split_screen_position.global_position.x:
-		player1.damage()
+		if player1 != null:
+			player1.damage()
+	else:
+		if player2 != null:
+			player2.damage()
 
 
 func _on_enemy_spawn_timer_timeout():
