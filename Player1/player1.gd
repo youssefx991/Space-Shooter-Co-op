@@ -1,7 +1,7 @@
 class_name player1 extends CharacterBody2D
 
 signal player_dead(number)
-signal laser_shot(laser_scene, location)
+signal laser_shot(laser_scene, location, number)
 @export var player_number = 1
 @export var SPEED = 300.0
 @export var ACCELERATION = 5
@@ -53,7 +53,7 @@ func _physics_process(delta):
 
 
 func shoot():
-	laser_shot.emit(laser_scene, muzzle.global_position)
+	laser_shot.emit(laser_scene, muzzle.global_position, player_number)
 	
 	
 func damage():
