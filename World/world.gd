@@ -15,6 +15,9 @@ func _ready():
 	player1.laser_shot.connect(_on_player1_laser_shot)
 	player2.laser_shot.connect(_on_player1_laser_shot)
 	
+	player1.player_dead.connect(_on_player_dead)
+	player2.player_dead.connect(_on_player_dead)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,14 +29,14 @@ func _process(delta):
 
 
 func _on_player1_laser_shot(laser_scene, location):
-	print("shooting")
+	
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
 	add_child(laser)
 
 
 func _on_enemy_say_entered_land(location):
-	print("Location.x = {} and split.x = {}",location.x, $split_screen_position.global_position.x )
+	
 	if location.x < $split_screen_position.global_position.x:
 		if player1 != null:
 			player1.damage()
@@ -51,3 +54,5 @@ func _on_enemy_spawn_timer_timeout():
 	enemy_to_spawn.global_position = Vector2(random_x, 50)
 	add_child(enemy_to_spawn)
 	
+func _on_player_dead(number):
+	get_tree().change_scene_to_file("res://Wasted Menu/wasted_menu.tscn")

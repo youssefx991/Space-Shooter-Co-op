@@ -1,6 +1,6 @@
 class_name player1 extends CharacterBody2D
 
-
+signal player_dead(number)
 signal laser_shot(laser_scene, location)
 @export var player_number = 1
 @export var SPEED = 300.0
@@ -47,7 +47,7 @@ func _physics_process(delta):
 			await get_tree().create_timer(fire_rate).timeout
 			is_shooting = false
 		
-		
+	global_position = global_position.clamp(Vector2.ZERO, get_viewport_rect().size)
 
 	move_and_slide()
 
@@ -65,3 +65,4 @@ func damage():
 		
 func die():
 	queue_free()
+	player_dead.emit(player_number)

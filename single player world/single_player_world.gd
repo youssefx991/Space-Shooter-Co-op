@@ -4,6 +4,7 @@ extends Node2D
 @onready var player1_spawn_position = $player1_spawn_position
 @export var enemy_scenes : Array[PackedScene] = []
 
+var score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -13,7 +14,7 @@ func _ready():
 	
 	player1.global_position = player1_spawn_position.global_position	
 	player1.laser_shot.connect(_on_player1_laser_shot)
-	
+	player1.player_dead.connect(_on_player_dead)
 	
 
 
@@ -29,7 +30,9 @@ func _on_player1_laser_shot(laser_scene, location):
 	print("shooting")
 	var laser = laser_scene.instantiate()
 	laser.global_position = location
+
 	add_child(laser)
+	
 
 
 func _on_enemy_say_entered_land(location):
@@ -45,5 +48,10 @@ func _on_enemy_spawn_timer_timeout():
 	while (random_x == 576):
 		random_x = randf_range(0, 1152)
 	enemy_to_spawn.global_position = Vector2(random_x, 50)
+
 	add_child(enemy_to_spawn)
 	
+
+	
+func _on_player_dead(number):
+	get_tree().change_scene_to_file("res://Wasted Menu/wasted_menu.tscn")

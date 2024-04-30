@@ -1,6 +1,5 @@
 class_name enemy extends Area2D
 @onready var health_label = $health_label
-
 signal say_entered_land(location)
 @export var SPEED = 100
 @export var health = 100
@@ -28,7 +27,6 @@ func die():
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	print("lol")
 	say_entered_land.emit(global_position)
 	queue_free()
 
