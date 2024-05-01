@@ -14,6 +14,7 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 
 func _on_body_entered(body):
 	if body is player1:
+		print("Laser in player: ", body.player_number)
 		body.die()
 		player_dead.emit(body.player_number)
 

@@ -29,3 +29,17 @@ func _process(delta):
 			label.text = "Player 1 Score = " + str(player1_score)
 			label.text += "\nPlayer 2 Score = " + str(player2_score)
 			label.text += "\nTIE!!!"
+
+
+func _on_play_again_pressed():
+	if is_single_game:
+		get_tree().change_scene_to_file("res://single player world/single_player_world.tscn")
+	else:
+		get_tree().change_scene_to_file("res://World/world.tscn")
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+
+func _on_main_menu_pressed():
+	get_tree().change_scene_to_file("res://Main Menu/main_menu.tscn")

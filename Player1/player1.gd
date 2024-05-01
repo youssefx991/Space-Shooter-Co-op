@@ -41,7 +41,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("player2_shoot") and player_number == 2:
 		
 		if not is_shooting:
-			print("shooting 2")
+			#print("shooting 2")
 			is_shooting = true
 			shoot()
 			await get_tree().create_timer(fire_rate).timeout
