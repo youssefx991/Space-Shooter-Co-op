@@ -1,5 +1,5 @@
 class_name laser extends Area2D
-signal player_dead(player_number)
+signal player_dead_by_laser(player_number)
 var SPEED = 1000
 signal enemy_dead(number)
 var player_number = 0
@@ -16,7 +16,7 @@ func _on_body_entered(body):
 	if body is player1:
 		print("Laser in player: ", body.player_number)
 		body.die()
-		player_dead.emit(body.player_number)
+		player_dead_by_laser.emit(body.player_number)
 
 
 func _on_area_entered(area):

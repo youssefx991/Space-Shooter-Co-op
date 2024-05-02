@@ -36,6 +36,7 @@ func _on_player1_laser_shot(laser_scene, location, player_number):
 	laser.global_position = location
 	laser.player_number = player_number
 	laser.enemy_dead.connect(_on_enemy_dead)
+	laser.player_dead_by_laser.connect(_on_player_dead_by_laser)
 	add_child(laser)
 
 
@@ -68,3 +69,7 @@ func _on_enemy_dead(number):
 	else:
 		player2_score += 1
 		Scores.player2_score = player2_score
+
+func _on_player_dead_by_laser(player_number):
+	Scores.killed_player = player_number
+	
